@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Opasitas Gambar</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 1rem;
+}
+
+
+button {
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+</style>
+</head>
+<body>
+    <h1>Selamat Datang</h1>
+    <form id=""">
+        <label for="pilihfoto">Pilih Gambar:</label>
+        <select id="pilihfoto">
+            <option value="potopoto/download (1).jpeg">Gambar 1</option>
+            <option value="potopoto/download (2).jpeg">Gambar 2</option>
+            <option value="potopoto/download.jpeg">Gambar 3</option>
+        </select>
+
+        <label for="gantiburam">Pilih Opacity:</label>
+        <select id="gantiburam">
+            <option value="1">1</option>
+            <option value="0.5">0.5</option>
+            <option value="0.2">0.2</option>
+        </select>
+
+        <button type="button" onclick="applyFilter()">Kirim</button>
+    </form>
+
+    <div class="image-container">
+        <img id="hasilpoto" src="" alt="Masukkan foto terlebih dahulu">
+    </div>
+</body>
+<script>
+    function applyFilter() {
+    const pilihfoto = document.getElementById('pilihfoto');
+    const gantiburam = document.getElementById('gantiburam');
+
+    const selectedImage = pilihfoto.value;
+    const selectedOpacity = gantiburam.value;
+
+    const hasilpoto = document.getElementById('hasilpoto');
+
+    hasilpoto.src = selectedImage;
+    hasilpoto.style.opacity = selectedOpacity;
+}
+</script>
+</html>

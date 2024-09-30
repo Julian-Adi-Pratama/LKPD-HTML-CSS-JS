@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Input</title>
+    <style>
+        .output {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+    <center>
+        <div class="container">
+            <h2>Silahkan </h2>
+            <form id="searchForm">
+                <input type="text" id="searchInput" placeholder="Masukkan nama">
+                <button type="submit">Submit</button>
+            </form>
+
+            <div class="output" id="output"></div>
+        </div>
+    </center>
+
+    <script>
+        document.getElementById("searchForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var inputText = document.getElementById("searchInput").value.trim();
+            if (inputText === "") {
+                document.getElementById("output").textContent = "Anda tidak mencari data";
+            } else {
+                document.getElementById("output").textContent = "Data ditemukan : " + inputText ;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
